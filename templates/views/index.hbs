@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF8">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="icon" href="/img/icon.png">
+    <script type="text/javascript" src="/js/app.js"></script>
+  </head>
+  <title>Home</title>
+  <body>
+    <main>
+      {{>header}}
+      <p>Useful site for weather by: {{name}} {{lastName}}</p>
+      <form id="weatherForm">
+      <input id="searchInput" type="text" placeholder="Address">
+      <button id="searchButton">Search</button>
+      </form>
+      <p id="response"></p>
+      <p id="loading"></p>
+    </main>
+  {{>footer}}
+  </body>
+</html>
