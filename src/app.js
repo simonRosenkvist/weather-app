@@ -61,14 +61,15 @@ app.get('/weather', (req, res) => {
       return res.send(error);
     }
 
-    forecast(latitude.toString().substring(0, 6), longitude.toString().substring(0, 6), (error, {temperature, feelslike, description} = {}) => {
+    forecast(latitude.toString().substring(0, 6), longitude.toString().substring(0, 6), (error, {temperature, feelslike, description, updated, icon} = {}) => {
       if (error) {
         return res.send(error);
       }
-      const weather = 'The weather in ' + location + ' is ' + description + ' and ' + temperature + 'C degrees. It feels like ' + feelslike + 'C degrees.';
+      const weather = 'The weather in ' + location + ' is ' + description + ' and ' + temperature + 'C degrees. It feels like ' + feelslike + 'C degrees. Last updated: ' + updated;
       res.send({
         forecast: weather,
         location: location,
+        icon: icon,
         address: req.query.location
       });
     });

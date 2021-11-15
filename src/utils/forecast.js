@@ -15,7 +15,9 @@ const getForecast = (lat, lon, callback) => {
       const data = {
         temperature: response.temperature,
         feelslike: response.feelslike,
-        description: response.weather_descriptions[0].toLowerCase()
+        description: response.weather_descriptions[0].toLowerCase(),
+        icon: response.weather_icons[0],
+        updated: response.observation_time
       }
       callback(undefined, data);
     }
