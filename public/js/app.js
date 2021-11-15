@@ -13,7 +13,7 @@ var getData = (address = 'Karlskoga') => {
   var loadingParagraph = document.getElementById('loading');
   loadingParagraph.innerHTML = 'Loading...';
   var responseParagraph = document.getElementById('response');
-  var a = fetch('http://localhost:3000/weather?location='+address).then( (response) => {
+  var a = fetch('/weather?location='+address).then( (response) => {
     response.json().then( (data) => {
       if (data.error) {
         responseParagraph.innerHTML = data.error;
